@@ -1,4 +1,4 @@
-// 1. Reverse an array.
+// 2. Reverse an array.
 
 const arr = [1, 3, 4, 6, 35, 7, 8, 10];
 var newArray = [];
@@ -40,3 +40,14 @@ const total = arr.reduce((cur, sum) => {
   return sum;
 }, 0);
 console.log('Sum of array using reduce=>', total);
+
+//4 Remove duplicates from an array.
+const arrayNew = [2, 3, 4, 6, 5, 6, 7, 9, 2, 4, 6, 7, 8];
+const removeDuplicate = arrayNew.filter(
+  (item, index) => arrayNew.indexOf(item) === index
+);
+console.log('Remove duplicate value=>', removeDuplicate);
+
+const removeDuplicateSet = [...new Set(arrayNew)];
+
+console.log(removeDuplicateSet);
