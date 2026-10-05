@@ -1,4 +1,4 @@
-// 2. Reverse an array.
+// 1. Reverse an array.
 
 const arr = [1, 3, 4, 6, 35, 7, 8, 10];
 var newArray = [];
@@ -51,3 +51,16 @@ console.log('Remove duplicate value=>', removeDuplicate);
 const removeDuplicateSet = [...new Set(arrayNew)];
 
 console.log(removeDuplicateSet);
+
+// 5 sorted array using loop
+const customSort = [1, 3, 4, 6, 35, 7, 8, 10];
+
+for (let i = 0; i < customSort.length - 1; i++) {
+  for (let j = 0; j < customSort.length - 1 - i; j++) {
+    if (customSort[j] > customSort[j + 1]) {
+      [customSort[j], customSort[j + 1]] = [customSort[j + 1], customSort[j]];
+    }
+  }
+}
+
+console.log('Sorted array:', customSort);
