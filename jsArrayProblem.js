@@ -64,3 +64,20 @@ for (let i = 0; i < customSort.length - 1; i++) {
 }
 
 console.log('Sorted array:', customSort);
+
+// 6 — Find the intersection of two arrays
+function intersection(arr1, arr2) {
+  const interSecResult = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      interSecResult.push(arr1[i]);
+    }
+  }
+
+  return interSecResult.filter(
+    (item, index) => interSecResult.indexOf(item) === index
+  );
+}
+const arr1 = [1, 2, 3, 4, 3, 5];
+const arr2 = [3, 4, 5, 6, 7];
+console.log('intersection of two arrays=>', intersection(arr1, arr2));
