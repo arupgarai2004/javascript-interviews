@@ -81,3 +81,34 @@ function intersection(arr1, arr2) {
 const arr1 = [1, 2, 3, 4, 3, 5];
 const arr2 = [3, 4, 5, 6, 7];
 console.log('intersection of two arrays=>', intersection(arr1, arr2));
+// 7 roated array
+function rotateArray(arr, k) {
+  const n = arr.length;
+  if (n === 0) {
+    return [];
+  }
+  k = k % n;
+  return [...arr.slice(n - k), ...arr.slice(0, n - k)];
+}
+
+console.log('Rotated Araay=>', rotateArray(arr1, 2));
+// 8 Find the largest contiguous subarray sum.
+const arrayEx = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+function subArraySum(arr) {
+  let maxSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentSum = 0;
+
+    for (let j = i; j < arr.length; j++) {
+      currentSum += arr[j];
+
+      if (currentSum > maxSum) {
+        maxSum = currentSum;
+      }
+    }
+  }
+
+  return maxSum;
+}
+console.log('sum of array values=>', subArraySum(arrayEx));
