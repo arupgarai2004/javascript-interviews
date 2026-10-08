@@ -112,3 +112,35 @@ function subArraySum(arr) {
   return maxSum;
 }
 console.log('sum of array values=>', subArraySum(arrayEx));
+// 9 Check if an array is a palindrome.
+function palindromeArray(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    if (arr[left] !== arr[right]) {
+      return false;
+    }
+
+    left++;
+    right--;
+  }
+
+  return true;
+}
+
+const pArray = [6, 1, 2, 3, 2, 1, 6];
+console.log('Array is palindrome or not ', palindromeArray(pArray));
+//10 Shuffle an array.
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
+}
+
+const sArr = [1, 2, 3, 4, 5];
+
+console.log('Shuffle Array:', shuffleArray(sArr));
