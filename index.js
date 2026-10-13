@@ -1,6 +1,7 @@
 import './prototype.js';
 import './callBindApply.js';
 import './jsArrayProblem.js';
+import './jsObjProb.js';
 const person1 = [
   { firstname: 'Rohit', lastname: 'Sharma' },
   { firstname: 'Sachin', lastname: 'Tendulkar' },
