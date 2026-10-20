@@ -1,3 +1,4 @@
+import './logger.js';
 import './prototype.js';
 import './callBindApply.js';
 import './jsArrayProblem.js';
