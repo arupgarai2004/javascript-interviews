@@ -16,8 +16,8 @@ const addressDetails = {
   postcode: '5612 DV',
   city: 'Eindhoven',
 };
-
 mergeObj(person, addressDetails);
+
 //Next: #2 — Deep clone an object.
 const myAddress = structuredClone(addressDetails);
 myAddress.street = '50 Luverlaan';
@@ -57,3 +57,37 @@ function deepEqual(obj1, obj2) {
 }
 
 console.log('Deep Equal=>', deepEqual(obj1, obj2)); // true
+
+const cars = ['Saab', 'Volvo', 'BMW'];
+
+//#5 — Transform an array into an object?
+function arrayToObj(arr1) {
+  return arr1.reduce((acc, car) => ({ ...acc, [car]: car }), {});
+}
+console.log('Transform an array into an object=>', arrayToObj(cars));
+
+//  #6 — Implement classes and inheritance
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  showDetails() {
+    return `I am ${this.name} and I am ${this.age} years old`;
+  }
+}
+
+class Employee extends Person {
+  constructor(name, age, dept) {
+    super(name, age);
+    this.dept = dept;
+  }
+
+  employeeDetails() {
+    return `${this.showDetails()}, department is ${this.dept}`;
+  }
+}
+
+const emp = new Employee('Arup', 40, 'IT');
+console.log(emp.employeeDetails());
